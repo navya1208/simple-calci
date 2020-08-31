@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calaculator</title>
+  <style>
+    input[type="button"] { 
+		background-color:#9B59B6; 
+		color: black; 
+		border: solid black 2px; 
+  
+    height:50px;
+    width:55px;
+    } 
+    input[type="button"]:hover {
+      background: pink;
+    }
+    input[type="text"]{
+
+      height:50px;
+      background:#F5EEF8 ;
+      color:black;
+      border:2px solid black;
+    }
+  
+  </style>
+
+  
+</head>
+<body>
+<center>
+     <table border="2px">
+        <tr>
+          <td colspan="3"><input id="result" type="text" placeholder="Result"></td>
+          <td><input type="button" value="C" onclick="clr()"></td>
+        </tr>
+        <tr>
+          <td><input type="button" value="1" onclick="dis('1')"></td>
+          <td><input type="button" value="2" onclick="dis('2')"></td>
+          <td><input type="button" value="3" onclick="dis('3')"></td>
+          <td><input type="button" value="+" onclick="dis('+')"></td>
+        </tr>
+        <tr>
+          <td><input type="button" value="4" onclick="dis('4')"></td>
+          <td><input type="button" value="5" onclick="dis('5')"></td>
+          <td><input type="button" value="6" onclick="dis('6')"></td>
+          <td><input type="button" value="-" onclick="dis('-')"></td>
+        </tr>
+        <tr>
+          <td><input type="button" value="7" onclick="dis('7')"></td>
+          <td><input type="button" value="8" onclick="dis('8')"></td>
+          <td><input type="button" value="9" onclick="dis('9')"></td>
+          <td><input type="button" value="*" onclick="dis('*')"></td>
+        </tr>
+        <tr>
+          <td><input type="button" value="." onclick="dis('.')"></td>
+          <td><input type="button" value="0" onclick="dis('0')"></td>
+          <td><input type="button" value="=" onclick="result()"></td>
+          <td><input type="button" value="/" onclick="dis('/')"></td>
+        </tr>
+        
+     </table>
+</center>
+
+</body>
+<script>
+  function dis(val){
+    document.getElementById("result").value+=val;
+  }
+  function result(){
+    a=document.getElementById("result").value;
+    b=eval(a);
+    document.getElementById("result").value=b;
+    
+  }
+  function clr(){
+    document.getElementById("result").value="";
+  }
+  
+
+</script>
+</html>
